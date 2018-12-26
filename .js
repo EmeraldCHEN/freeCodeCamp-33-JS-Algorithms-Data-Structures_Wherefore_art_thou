@@ -1,6 +1,6 @@
 function whatIsInAName(collection, source) {
     let sourceKeys = Object.keys(source);
-    return collection.filter(function(obj){
+    return collection.filter(function(obj){ // Filter the collection
         for(let i = 0; i < sourceKeys.length; i++){
             if(!obj.hasOwnProperty(sourceKeys[i]) || obj[sourceKeys[i]] !== source[sourceKeys[i]]){
                  return false;
