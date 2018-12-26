@@ -1,3 +1,5 @@
+/**************    Solution #1    **********************************************************************************/
+
 function whatIsInAName(collection, source) {
     let sourceKeys = Object.keys(source);
     return collection.filter(function(obj){ // Filter the collection
@@ -11,6 +13,21 @@ function whatIsInAName(collection, source) {
 }
 const result = whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }); 
 // Return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]
+
+
+
+
+/**************    Solution #2    **********************************************************************************/
+
+function whatIsInAName2(collection, source) {
+
+    let sourceKeys = Object.keys(source);
+    return collection.filter(function(obj){
+       return sourceKeys.every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);  
+    })
+}
+
+
 
 
 
