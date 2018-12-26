@@ -23,6 +23,7 @@ function whatIsInAName2(collection, source) {
 
     let sourceKeys = Object.keys(source);
     return collection.filter(function(obj){
+       // Use the Object.prototype.hasOwnProperty method to know if the property name exists in obj 
        return sourceKeys.every(key => obj.hasOwnProperty(key) && obj[key] === source[key]);  
     })
 }
